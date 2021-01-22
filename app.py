@@ -5,10 +5,10 @@ import sys
 from flask import Flask, render_template, Response
 
 # import camera driver
-if os.environ('SRC') == 'video':
+if os.environ['SRC'] == 'video':
     # Camera = import_module('camera_' + os.environ['CAMERA']).Camera
     from camera_opencv import Camera
-elif os.environ('SRC') == 'images':
+elif os.environ['SRC'] == 'images':
     from camera import Camera
 else:
     sys.exit()
@@ -33,11 +33,11 @@ def gen(camera):
 
 
 @app.route('/')
-def index():
+def index ():
     """Video streaming route. Put this in the src attribute of an img tag."""
     return Response(gen(Camera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', threaded=True)
+    app.run(host='0.0.0.0', threaded=True, port=int(os.environ['PORT']), debug=True)
