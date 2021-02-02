@@ -1,6 +1,6 @@
 # flask-image-video-file-streaming
 
-1. run `pip install -r requirements-opencv.txt`
+1. run `pip install -r requirements.txt`
 2. Change port in `app.py`.
 3. Place images/video in a folder.
 4. create environment variables:
