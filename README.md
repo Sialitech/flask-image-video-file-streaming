@@ -8,6 +8,12 @@
    2. `SRC` value should be `"images"` or `"video"`.
 5. run `python app.py`
 
+
+
+## Raspberry camera
+
+if you want to use a raspberry, just add `picamera==1.13` to `requirements.txt`.
+
 ## CREDIT TO
 
 [forked from here](https://github.com/miguelgrinberg/flask-video-streaming)
